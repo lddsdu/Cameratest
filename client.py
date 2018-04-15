@@ -1,14 +1,19 @@
 """
 
+server produce the image
 
+client get the image and add this info to the neural network.
+p
 
 """
 import time
 import socket
 import pickle
 import cv2
+import numpy as np
 
 client = socket.socket()
+
 client.connect(("127.0.0.1",9999))
 
 class NdarrayParser:
@@ -38,26 +43,6 @@ class NdarrayParser:
         cv2.imshow("frame",frame)
         cv2.waitKey(1)
         self.buffer = self.buffer[e+len(self.byte_endTag):(len(self.buffer))]
-
-class Parser:
-    """
-    read a byte list and get a numpy.ndarray Object
-    """
-    bytearray = []
-
-    def __init__(self,startTag,endTag):
-        self.startTag = startTag
-        self.endTag = endTag
-
-    def append(self,bytearay):
-        bytearray.append(bytearray)
-
-    def readFrame(self):
-        """
-        try to read a frame
-        :return:
-        """
-        pass
 
 while True:
     """
