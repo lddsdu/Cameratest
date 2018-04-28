@@ -1,5 +1,6 @@
 """
-
+通过socket来传输数据  视频的数据帧的分割方式为 b'startTag' + byte_frame + b'endTag'
+pickle.dump来序列化对象为二进制数据
 contact via socket
 
 """
