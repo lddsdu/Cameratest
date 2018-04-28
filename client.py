@@ -33,6 +33,7 @@ class NdarrayParser:
             self.buffer += subsquent
         s = self.buffer.find(self.startTag.encode("utf8"))
         e = self.buffer.find(self.endTag.encode("utf8"))
+#         cannot find an entire frame , so return to end this method
         if(e == -1 or s == -1):
             time.sleep(0.01)
             return
